@@ -6,7 +6,7 @@
 #    By: zbatik <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/28 11:36:14 by zbatik            #+#    #+#              #
-#    Updated: 2018/07/30 10:36:46 by zbatik           ###   ########.fr        #
+#    Updated: 2018/07/30 10:48:00 by zbatik           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,9 +43,9 @@ touch result.log
 
 players='champely abanlin hcao grati carli superjeannot'
 
-for	map in {0..2}
+for player in $players
 do
-	for player in $players
+	for	map in {0..2}
 	do
 		play_filler $player $map $filler
 	done
