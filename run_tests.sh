@@ -6,12 +6,12 @@
 #    By: zbatik <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/28 11:36:14 by zbatik            #+#    #+#              #
-#    Updated: 2018/07/30 10:48:00 by zbatik           ###   ########.fr        #
+#    Updated: 2018/07/30 10:55:19 by zbatik           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 play_filler () {
-	echo PLAYING\ AS\ AGAINSTS\ $1\ ON\ MAP\ $2 >> result.log
+	echo PLAYING\ AGAINSTS\ $1\ ON\ MAP\ $2 >> result.log
 	wins=0
 	for count in {1..5}
 	do
@@ -24,7 +24,7 @@ play_filler () {
 		./filler_vm -p$p1 $3 -p$p2 ./players/$1.filler -q -f ./maps/map0$2
 		winner=$(sed -n '2p' filler.trace)
 		echo $winner >> result.log
-		if [ "$winner" == "./zbatik.filler won" ]; then 
+		if [ "$winner" == "$3 won" ]; then 
 			wins=$(echo $wins + 1 | bc)
 		fi
 		if [ $wins == 3 ]; then
